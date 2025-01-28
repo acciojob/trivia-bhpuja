@@ -10,40 +10,65 @@
             line-height: 1.6;
             margin: 20px;
         }
-
-        .question-container {
+        .question {
             margin-bottom: 20px;
         }
-
-        .blockquote {
+        .options {
+            margin-left: 20px;
+        }
+        blockquote {
             max-width: 600px;
             margin: 10px auto;
             padding: 15px;
             border-left: 8px solid green;
             background-color: #f8fffe;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
         }
     </style>
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('capital');
+            let selectedValue = '';
+            for (const option of options) {
+                if (option.checked) {
+                    selectedValue = option.value;
+                    break;
+                }
+            }
+            const result = document.getElementById('result');
+            if (selectedValue === 'new-delhi') {
+                result.textContent = 'Correct! New Delhi is the capital of India.';
+                result.style.color = 'green';
+            } else if (selectedValue === 'mumbai') {
+                result.textContent = 'Incorrect. Mumbai is not the capital of India.';
+                result.style.color = 'red';
+            } else {
+                result.textContent = 'Please select an answer.';
+                result.style.color = 'orange';
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="question-container">
-        <h2>What is the capital of India?</h2>
-        <form>
-            <div>
-                <input type="radio" id="new-delhi" name="capital" value="New Delhi">
-                <label for="new-delhi">New Delhi</label>
-            </div>
-            <div>
-                <input type="radio" id="mumbai" name="capital" value="Mumbai">
-                <label for="mumbai">Mumbai</label>
-            </div>
-        </form>
+    <div class="question-space">
+        <div class="question">
+            <h2>What is the capital of India?</h2>
+        </div>
+        <div class="options">
+            <label><input type="radio" name="capital" value="new-delhi"> New Delhi</label><br>
+            <label><input type="radio" name="capital" value="mumbai"> Mumbai</label>
+        </div>
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="result" class="result"></div>
+        <blockquote>
+            New Delhi is the capital of India and an administrative district of NCT Delhi. 
+        </blockquote>
     </div>
-
-    <blockquote class="blockquote">
-        "New Delhi is the capital of India and an administrative district of NCT Delhi." - Wikipedia
-    </blockquote>
 </body>
 </html>
+
 
