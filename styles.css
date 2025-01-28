@@ -1,2 +1,57 @@
 
 /* Your CSS Code here. */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 0;
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+blockquote {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 15px;
+  border-left: 8px solid green;
+  background-color: #f8fffe;
+  font-weight: bold;
+}
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background: #e0f7fa;
+  color: #00796b;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
